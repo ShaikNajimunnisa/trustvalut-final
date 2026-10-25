@@ -1,7 +1,7 @@
-TrustVault – Secure Document Vault
+**TrustVault – Secure Document Vault**
 A secure document-sharing web app built with Node.js, Express and SQLite, with a built-in web UI. Users upload documents, share them with specific people (read or edit access), and every action is written to a tamper-evident audit log that admins can verify with one click.
 
-Features
+**Features**
 Authentication: register and login with JWT tokens (2-hour expiry) and bcrypt-hashed passwords
 Role-based access control: admin, owner and viewer roles
 Per-document sharing: owners grant or revoke read/edit access for other users
@@ -18,7 +18,7 @@ npm audit: 0 known vulnerabilities at the time of packaging
 Tech Stack
 Node.js 20+, Express, better-sqlite3, JSON Web Tokens, bcryptjs, multer, helmet, express-rate-limit, plain HTML/JS frontend.
 
-Project Structure
+**Project Structure**
 backend/
   src/
     app.js            # server setup
@@ -49,7 +49,7 @@ Owner	owner@vault.com	owner123
 Viewer	viewer@vault.com	viewer123
 Run the tests with npm test.
 
-API Overview
+**API Overview**
 Method	Endpoint	Access
 POST	/api/auth/register	Public (creates viewer)
 POST	/api/auth/login	Public
@@ -64,7 +64,7 @@ GET	/api/admin/audit/verify	Admin
 GET	/api/admin/users	Admin
 Check the route files in backend/src/routes/ for the exact URL prefixes if you change the mounting in app.js.
 
-Deploy with Docker
+**Deploy with Docker**
 bash
 cd backend
 docker build -t trustvault .
@@ -74,7 +74,7 @@ docker run -d --name trustvault -p 80:3000 -v trustvault-data:/data \
 docker exec -e ADMIN_EMAIL=you@example.com -e ADMIN_PASSWORD='YourLongPassword' trustvault node src/seed.js
 Put it behind HTTPS (Caddy or nginx with Let's Encrypt).
 
-Deploy on Render
+**Deploy on Render**
 Push this repo to GitHub.
 In Render, choose New > Blueprint and select the repo (it reads render.yaml).
 Set ADMIN_EMAIL and ADMIN_PASSWORD when asked. JWT_SECRET is generated automatically.
@@ -87,13 +87,8 @@ JWT_SECRET	Required in production, 16+ characters
 NODE_ENV	production disables demo seeding and enforces the secret
 DATA_DIR	Folder for trustvault.db and uploads/ (use a persistent disk)
 CORS_ORIGIN	Optional, comma-separated allowed origins
-PORT	Default 3000
+PORT	http://localhost:3000/
 ADMIN_EMAIL / ADMIN_PASSWORD	Used only by node src/seed.js to create or update an admin
-Screenshots
-Add screenshots of the login page, documents table, share dialog and audit log here.
 
-Author
+**Author**
 shaik.najimunnisa29email@.com
-
-
-Claude finished the response

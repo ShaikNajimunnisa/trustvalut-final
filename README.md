@@ -1,28 +1,3 @@
-Claude
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Readme · MD
 TrustVault – Secure Document Vault
 A secure document-sharing web app built with Node.js, Express and SQLite, with a built-in web UI. Users upload documents, share them with specific people (read or edit access), and every action is written to a tamper-evident audit log that admins can verify with one click.
 

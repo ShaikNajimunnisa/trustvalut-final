@@ -71,7 +71,7 @@ docker build -t trustvault .
 docker run -d --name trustvault -p 80:3000 -v trustvault-data:/data \
   -e JWT_SECRET="$(openssl rand -hex 32)" trustvault
 # create the first real admin (no demo users in production)
-docker exec -e ADMIN_EMAIL=you@example.com -e ADMIN_PASSWORD='YourLongPassword' trustvault node src/seed.js
+docker exec -e ADMIN_EMAIL=shaik.najimunnisa29@email.com -e ADMIN_PASSWORD='YourLongPassword' trustvault node src/seed.js
 Put it behind HTTPS (Caddy or nginx with Let's Encrypt).
 
 **Deploy on Render**
